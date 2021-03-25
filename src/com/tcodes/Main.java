@@ -7,6 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
         ProteinFinder proteinFinder = new ProteinFinder();
-        proteinFinder.testing();
+        proteinFinder.realTesting();
     }
 }

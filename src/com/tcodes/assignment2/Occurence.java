@@ -3,11 +3,11 @@ package com.tcodes.assignment2;
 public class Occurence {
     public boolean twoOccurrences(String stringa, String stringb)
     {
-        int pos1 = stringb.indexOf(stringa);
-        if(pos1 == -1)
+        int pos = stringb.indexOf(stringa);
+        if(pos == -1)
             return false;
         else
-            return (stringb.indexOf(stringa, pos1+1) != -1);
+            return (stringb.indexOf(stringa, pos+1) != -1);
     }
 
     public String lastPart(String stringa, String stringb){
