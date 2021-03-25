@@ -5,22 +5,26 @@ import edu.duke.FileResource;
 
 import java.io.File;
 
-public class TagFinderModified {
+public class ProteinFinder {
     public String findProtein(String dna, String startCodon, String stopCodon) {
-        int start = dna.indexOf(startCodon);
-        dna = dna.toLowerCase();
+        String dnaUppercase = dna.toLowerCase();
         startCodon = startCodon.toLowerCase();
         stopCodon = stopCodon.toLowerCase();
+
+        int start = dnaUppercase.indexOf(startCodon);
+
         if (start == -1) {
             return "";
         }
-        int stop = dna.indexOf(stopCodon, start+3);
+
+        int stop = dnaUppercase.indexOf(stopCodon, start+3);
+
         while(stop != -1){
-            if((start-stop)%3 == 0){
+            if((stop-start)%3 == 0){
                 return dna.substring(start, stop+3);
             }
             else {
-                stop = dna.indexOf(stopCodon, stop+3);
+                stop = dnaUppercase.indexOf(stopCodon, stop+1);
             }
         }
         return "";
